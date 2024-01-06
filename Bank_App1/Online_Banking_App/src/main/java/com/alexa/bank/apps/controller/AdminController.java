@@ -33,7 +33,7 @@ public class AdminController {
 	  
   }
   
-  @PostMapping(value="/assign/{uname}")
+  @PostMapping(value="/assignRole/{uname}")
   public String assignRole(@PathVariable String uname,@RequestBody Role role)
   {
 	System.out.println("Check data in adminController" + uname + " " + role);
