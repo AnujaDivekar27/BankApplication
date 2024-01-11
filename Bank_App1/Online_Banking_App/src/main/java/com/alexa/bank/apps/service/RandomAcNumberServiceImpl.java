@@ -21,7 +21,7 @@ public class RandomAcNumberServiceImpl implements RandomAcNumberService
 	{
 	  List<RandomAcNumberGenerator> randomlist=randomAcNumberRepository.findAll();
 		
-	  return randomlist.get(0);
+	  return randomlist.get(0); //returns first randomAcNumber from randomlist
 	}
 
 }
