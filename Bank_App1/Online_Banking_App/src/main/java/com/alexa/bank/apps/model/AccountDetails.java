@@ -5,11 +5,13 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -52,9 +54,10 @@ public class AccountDetails
 	private String bankaddress;
 	
 	//AccountBalance table contains pri key id of AccountDetails table as fk
-	@OneToMany (cascade = CascadeType.ALL)
+	
+	@OneToOne (cascade = CascadeType.ALL)
 	@JoinColumn(name = "ac_detail_id")
-	private List<AccountBalance>accountBalances=new ArrayList<AccountBalance>();
+	private AccountBalance accountBalance;
 
 
 }
